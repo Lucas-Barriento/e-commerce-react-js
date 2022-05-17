@@ -1,0 +1,25 @@
+#navbar{
+    display: flex;
+    color: whitesmoke;
+    background-color: black !important;
+}
+.logo{
+    width: 30px;
+}
+.logo img{
+    width: 100%;
+}
+ul{
+    display: flex;
+    width: 700px;
+    justify-content: space-around;
+    list-style:none;
+}
+li{
+    width: 150px;
+}
+li button{
+    width: 100%;
+    background-color: rgb(238, 120, 120) !important;
+    color: rgb(233, 233, 146) !important;
+}
