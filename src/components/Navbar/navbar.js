@@ -4,6 +4,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import CartWidget from '../CartWidget/CartWidget';
+import SplitButton from '../SplitButton/SplitButton';
 //funcion flecha
 const Navbar = () =>{
 return(
@@ -17,7 +18,7 @@ return(
                 <Button variant="contained">Inicio</Button>
                 </li>
                 <li>
-                <Button variant="contained">Productos</Button>
+                <SplitButton variant="contained">Productos</SplitButton>
                 </li>
                 <li>
                 <Button variant="contained">Nosotros</Button>

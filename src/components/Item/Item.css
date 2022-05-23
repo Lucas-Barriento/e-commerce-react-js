@@ -1,0 +1,14 @@
+#cardContainer{
+    height: 430px !important;
+}
+#imgItemContainer img{
+    width: 172px;
+    height: 172px;
+}
+h3{
+    text-align: center;
+    height: 100px;
+}
+p{
+    text-align: center;
+}
