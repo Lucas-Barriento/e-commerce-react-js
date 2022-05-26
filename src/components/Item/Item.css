@@ -1,6 +1,10 @@
 #cardContainer{
     height: 430px !important;
 }
+#imgItemContainer{
+    display: flex;
+    justify-content: center;
+}
 #imgItemContainer img{
     width: 172px;
     height: 172px;
@@ -11,4 +15,9 @@ h3{
 }
 p{
     text-align: center;
+}
+#btnAddToCart{
+    display: flex;
+    justify-content: center;
+    
 }

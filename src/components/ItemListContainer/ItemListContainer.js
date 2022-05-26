@@ -1,21 +1,40 @@
-import Item from '../Item/Item';
+import ItemList from '../ItemList/ItemList';
 import { Grid } from '@mui/material';
+import { useEffect,useState } from 'react';
 import './ItemListContainer.css'
-
+/*En ItemListContainer esta la promesa donde se llama al back  */
 const ItemListContainer = ({productos}) =>{
-    /* grid>grid-item>card */
-    return (
-        <Grid container spacing={2} >{
-        productos.map(({id,nombre,stock,tipo,imagen1,precio})=>{   
-            return(
-                    <Grid item xs={3} md={3} key={id} >
-                        <Item id={id} nombre={nombre} stock={stock} tipo={tipo} imagen1={imagen1} precio={precio}/>
-                    </Grid>
-            )
+    const [products,setProducts] = useState([])
+    
+    /* se declara la promesa */
+    const getProducts = () =>{
+        return new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                resolve(productos)                
+            }, 2000);
         })
     }
-    </Grid>
-    )  
+    /* useEffect evita que se llame a getProducts cada vez que se modifica el estado */
+useEffect(()=>{
+    /* se llama a la promesa */
+    getProducts()
+    .then((response)=>{
+        /* seteamos products para despues enviar a ItemList */
+        setProducts(response);
+    })
+    .catch((err)=>{
+        alert("fallo la conexion");
+    })
+})
+
+    return (
+        
+        <Grid container spacing={2} >{
+            <ItemList productos={products}/>
+        }
+        </Grid>
+)  
+
 }
 
 export default ItemListContainer;
