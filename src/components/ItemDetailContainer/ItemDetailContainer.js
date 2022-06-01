@@ -1,24 +1,31 @@
 import ItemDetail from "../ItemDetail/ItemDetail"
-import {articulo} from '../../utils/products'
 import { useEffect,useState } from 'react';
+import { useParams } from "react-router-dom";
+import articulos from '../../utils/products'
 
 const ItemDetailContainer = () =>{
     const [product, setproduct] = useState({});
+    const {id} =useParams();
 
-    const getItem = ()=>{
+/*     const getItem = ()=>{
         return new Promise((resolve,reject) => {
             setTimeout(() => {
-                resolve(articulo)                
+                resolve(getProducts)                
             }, 2000);
         })
-    }
+    } */
 
     useEffect(() => {
-        getItem()
+/*         getItem()
         .then((response) => {
             setproduct(response);
-        })
-    }, [])
+        }) */
+        //usamos find para encontrar el id seleccionado y setearlo a product
+        setproduct(articulos.find(item => {
+            return item.id == id;
+        }))
+        
+    }, [id])
     
     return(
         <ItemDetail producto={product}/>

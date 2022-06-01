@@ -18,8 +18,14 @@ ul{
 li{
     width: 150px;
 }
-li button{
+li button {
     width: 100%;
     background-color: rgb(238, 120, 120) !important;
     color: rgb(233, 233, 146) !important;
+}
+li button a{
+    width: 100%;
+    background-color: rgb(238, 120, 120) !important;
+    color: rgb(233, 233, 146) !important;
+    text-decoration: none !important
 }
