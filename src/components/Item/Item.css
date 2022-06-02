@@ -25,12 +25,9 @@ p{
     width: 100%;
     bottom: 0px;
     background-color: rgb(238, 120, 120) !important;
-
-}
-
-.btnDetail a{
-    text-decoration: none;
     color: rgb(233, 233, 146) !important;
-
 }
 
+a{
+    text-decoration: none;
+}

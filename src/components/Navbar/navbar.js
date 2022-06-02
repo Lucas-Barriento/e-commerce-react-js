@@ -1,33 +1,72 @@
 import './navbar.css'
 
+import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import CartWidget from '../CartWidget/CartWidget';
-import SplitButton from '../SplitButton/SplitButton';
 import { Link } from 'react-router-dom';
+import { Menu,MenuItem } from '@mui/material';
+import { categorias } from '../../utils/products';
 
 const Navbar = () =>{
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 return(
       <AppBar id='navbar' position="static">
         <Toolbar variant="dense">
           <div className='logo'>
-          <Link to='/' >
-            <img src='/logo192.png' alt='logoImg' className='logoImg'></img>
-          </Link>
+            <Link to='/' >
+              <img src='/logo192.png' alt='logoImg' className='logoImg'></img>
+            </Link>
           </div>
             <ul>
                 <li>
-                <Button variant="contained"><Link to='/' >Inicio</Link> </Button>
+                <Link to='/' >
+                <Button variant="contained">Inicio</Button>
+                </Link>
                 </li>
                 <li>
-                <SplitButton variant="contained"><Link to='/products/:categories' >Productos</Link></SplitButton>
+                <Button
+                id="basic-button"
+                aria-controls={open ? 'basic-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
+                >
+                  categorias
+                </Button>
+                <Menu
+                  id="basic-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  MenuListProps={{
+                  'aria-labelledby': 'basic-button',
+                  }}
+                >
+                  {categorias.map((cat)=>{
+                      return <MenuItem><Link to={`/category/${cat}`}>{cat}</Link></MenuItem>
+                      })}
+                </Menu>
+{/*                 <SplitButton variant="contained"></SplitButton>
+ */}                
                 </li>
                 <li>
-                <Button variant="contained"><Link to='/about-us' >Nosotros</Link></Button>
+                <Link to='/about-us'>
+                <Button variant="contained">Nosotros</Button>
+                </Link>
                 </li>
                 <li>
-                <Button variant="contained"><Link to='/contact' >Contacto</Link></Button>
+                <Link to='/contact'>
+                <Button variant="contained">Contacto</Button>
+                </Link>
                 </li>
             </ul>
             <div className='cart'>
