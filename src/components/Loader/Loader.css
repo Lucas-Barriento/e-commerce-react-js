@@ -1,0 +1,16 @@
+.spinnerContainer{
+    height: 100vh;
+    position: relative;
+}
+.spinnerContainer div{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+}
+.spinner{
+    width: 100px !important;
+    height: 100px !important;
+    color: rgb(238, 120, 120) ;
+}

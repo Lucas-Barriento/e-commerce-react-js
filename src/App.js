@@ -24,6 +24,7 @@ return(
       <Route path='*' element={<PageNotFound/>}/>
       <Route path='/about-us' element={<AboutUs/>}/>
       <Route path='/category/:categoryId' element={<Categories/>}/>
+      <Route path='./cart'/>
     </Routes>
   </BrowserRouter>
 </div>

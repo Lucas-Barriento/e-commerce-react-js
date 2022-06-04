@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
 import { Menu,MenuItem } from '@mui/material';
-import { categorias } from '../../utils/products';
+import { categories } from '../../utils/products';
 
 const Navbar = () =>{
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -51,12 +51,10 @@ return(
                   'aria-labelledby': 'basic-button',
                   }}
                 >
-                  {categorias.map((cat)=>{
-                      return <MenuItem><Link to={`/category/${cat}`}>{cat}</Link></MenuItem>
+                  {categories.map((cat)=>{
+                      return <MenuItem id="menuItem" key={cat}><Link to={`/category/${cat}`}><Button >{cat}</Button></Link></MenuItem>
                       })}
-                </Menu>
-{/*                 <SplitButton variant="contained"></SplitButton>
- */}                
+                </Menu>                
                 </li>
                 <li>
                 <Link to='/about-us'>

@@ -1,12 +1,11 @@
 import articulos from '../utils/products';
 
-    
 /* se declara la promesa */
-const getProducts = ()=>{
-    return new Promise((resolve,reject)=>{
-        setTimeout(() => {
+const GetProducts = ()=>{
+        return new Promise((resolve,reject)=>{
             resolve(articulos)                
-        }, 0);
     })
+    
+    
 }
-export default getProducts;
+export default GetProducts;

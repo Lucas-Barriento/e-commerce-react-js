@@ -27,3 +27,8 @@ margin: 0;
     flex-direction: row;
     flex-wrap: nowrap;
 }
+a button{
+    background-color: rgb(238, 120, 120) !important;
+    color: rgb(233, 233, 146) !important;
+    width: 100%;
+}

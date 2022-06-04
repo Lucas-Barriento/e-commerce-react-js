@@ -2,13 +2,13 @@ import { Grid } from "@mui/material"
 import Item from "../Item/Item"
 import './ItemList.css'
 /* en ItemList esta el map de las props recibidas de ItemListContainer */
-const ItemList = ({productos}) =>{
+const ItemList = ({products}) =>{
     return(
-        productos.map((obj)=>{   
-            const {id,nombre,stock,categoria,imagen1,precio}= obj
+        products.map((obj)=>{   
+            const {id,name,stock,category,image1,price}= obj
             return(
                     <Grid item md={3} key={id} >
-                        <Item id={id} nombre={nombre} stock={stock} tipo={categoria} imagen1={imagen1} precio={precio}/>
+                        <Item id={id} name={name} stock={stock} category={category} image1={image1} price={price}/>
                     </Grid>
             )
         })

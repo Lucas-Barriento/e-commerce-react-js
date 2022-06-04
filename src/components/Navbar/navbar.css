@@ -2,6 +2,8 @@
     display: flex;
     color: whitesmoke;
     background-color: black !important;
+    height: 80px;
+    justify-content: center;
 }
 .logo{
     width: 30px;
@@ -14,18 +16,17 @@ ul{
     width: 700px;
     justify-content: space-around;
     list-style:none;
+    margin: 0 !important;
 }
 li{
     width: 150px;
 }
-li button {
+li button,menuItem button a,a{
     width: 100%;
     background-color: rgb(238, 120, 120) !important;
     color: rgb(233, 233, 146) !important;
 }
-li button a{
-    width: 100%;
-    background-color: rgb(238, 120, 120) !important;
-    color: rgb(233, 233, 146) !important;
-    text-decoration: none !important
+
+#basic-menu ul{
+    background-color: black;
 }

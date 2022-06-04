@@ -1,5 +1,6 @@
 #cardContainer{
-    height: 450px !important;
+    height: calc(450px + .6vw) !important;
+
 }
 #imgItemContainer{
     display: flex;
@@ -11,7 +12,8 @@
 }
 h3{
     text-align: center;
-    height: 100px;
+    height: 100px !important;
+    font-size: calc(1.0rem + .6vw);
 }
 p{
     text-align: center;
