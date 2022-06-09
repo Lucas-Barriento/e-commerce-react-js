@@ -7,8 +7,10 @@ import { Link } from 'react-router-dom'
 import { Button } from '@mui/material'
 
 const ItemDetail = ({product}) =>{
+    // eslint-disable-next-line no-unused-vars
     const {id,name,image1,stock,price} = product;
     const [showOnAdd, setShowOnAdd] = useState(true);
+
     const onAdd = (count) => {
         setShowOnAdd(false);
         alert(name+ " x "+count +" un. agregado al carrito")  
@@ -25,7 +27,7 @@ const ItemDetail = ({product}) =>{
                     <p>${Intl.NumberFormat().format(price)},00</p>
                     <p> o 6 cuotas sin interes de ${(price / 6).toFixed(2)}</p>
                     {showOnAdd ?
-                    <ItemCount stock={stock} onAdd={onAdd} />
+                    <ItemCount product={product} onAdd={onAdd} />
                     :
                     <Link to={'/cart'}><Button variant="contained">Terminar compra</Button></Link>
                     }                   

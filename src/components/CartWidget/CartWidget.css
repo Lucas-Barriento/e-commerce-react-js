@@ -10,3 +10,18 @@ svg{
     background-color: transparent !important;
     color: white;
 }
+
+#basic-menu ul{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+#clearBtn{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#clearBtn svg{
+    display: flex;
+    color: red !important;
+}

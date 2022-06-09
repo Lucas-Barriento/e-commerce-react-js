@@ -1,4 +1,12 @@
 #btnCount{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-self: center;  
+}
+
+#btnCount p{
+    margin: 0 !important;
+}
+#btnAddToCart svg{
+    color: black;
 }

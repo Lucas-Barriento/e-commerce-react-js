@@ -1,12 +1,12 @@
-import { Card } from "@mui/material";
-import { CardContent } from "@mui/material";
 import './Item.css'
+import { Card,CardContent,Button } from "@mui/material";
 import ItemCount from "../ItemCount/ItemCount";
-import { Button } from "@mui/material";
 import { Link } from 'react-router-dom';
-/* En Item se renderiza el card de cada producto, y la funcion onAdd */
-const Item = ({id,name,stock,category,image1,price}) =>{
 
+/* En Item se renderiza el card de cada producto, y la funcion onAdd */
+const Item = ({product}) =>{
+    const{id,name,image1,price} = product;
+    
     const onAdd = (count) => {
         alert(name+ " x "+count +" un. agregado al carrito")  
     }
@@ -24,7 +24,7 @@ const Item = ({id,name,stock,category,image1,price}) =>{
                 </Link>
                 <h3>{name}</h3>
                 <p>${Intl.NumberFormat().format(price)},00</p>
-                <ItemCount stock={stock} onAdd={onAdd} />
+                <ItemCount product={product} onAdd={onAdd} />
             </CardContent>
         </Card>
     )

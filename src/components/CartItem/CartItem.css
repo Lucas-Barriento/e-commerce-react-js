@@ -1,0 +1,23 @@
+#imgCartItemContainer{
+    width: 90px;
+    height: 90px;
+}
+#imgCartItemContainer img{
+    width: 100%
+}
+#cartCard{
+    display: flex;
+}
+#cartCardContent{
+    display: flex;
+}
+
+#dataCartItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 420px;
+}
+#deleteBtn svg{
+    color: black;
+}

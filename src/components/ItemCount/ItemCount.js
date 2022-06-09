@@ -1,12 +1,17 @@
 import { Button } from "@mui/material";
-import { useState } from "react";
+import { useState,useContext } from "react";
 import './ItemCount.css'
+import CartContext from '../../Context/CartContext'
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
-/* en ItemCount se hace la logica y render de los botones + y - */
-const ItemCount = ({stock,onAdd}) =>{
+// en ItemCount se hace la logica y render de los botones + y - 
+const ItemCount = ({product,onAdd}) =>{
+//se importa el addItem de CartContext
+const {addItem} = useContext(CartContext)
+
     const [count, setCount] = useState(1);
     const addCount = () =>{
-        if (count<stock) {
+        if (count<product.stock) {
             setCount(count+1)            
         }
     }
@@ -23,8 +28,11 @@ const ItemCount = ({stock,onAdd}) =>{
                 <Button onClick={addCount}>+</Button>
             </div>
             <div id="btnAddToCart">
-                <Button onClick={()=>onAdd(count)}>Añadir</Button>
+{/*                 <Button onClick={()=>onAdd(count)}>Añadir</Button>
+ */}            
+                    <AddShoppingCartIcon onClick={()=>addItem(product,count)}/>
             </div>
+
         </> 
     )
 

@@ -7,13 +7,15 @@ import Contact from './pages/Contact'
 import AboutUs from './pages/AboutUs'
 import Home from './pages/Home';
 import Categories from './pages/Categories';
-
+import { CartProvider } from './Context/CartContext';
+//se importa CartProvider solo aca para wrappear toda la app
 function App() {
 /* falta usar use params */
   let title = 'Venta de cascos';
 
 return(
 <div id='app'>
+  <CartProvider>
   <BrowserRouter>
     <Navbar/>
     <h1>{title}</h1>
@@ -27,6 +29,7 @@ return(
       <Route path='./cart'/>
     </Routes>
   </BrowserRouter>
+  </CartProvider>
 </div>
 );
 }
