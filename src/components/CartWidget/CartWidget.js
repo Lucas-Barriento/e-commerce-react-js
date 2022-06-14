@@ -20,7 +20,7 @@ const CartWidget = () =>{
     };
 
     return(
-        <div>
+        <div className={`${cartListItems.length===0 && 'emptyCart'}`}>
             <Button
                 variant="contained"
                 className='btnCart'
@@ -41,7 +41,7 @@ const CartWidget = () =>{
                     'aria-labelledby': 'basic-button',
                 }}
             >
-                {cartListItems.length=== 0 ?
+            {cartListItems.length=== 0 ?
                     <p style={{color: "white"}}>carrito vacio</p>
                     :
                     <div>

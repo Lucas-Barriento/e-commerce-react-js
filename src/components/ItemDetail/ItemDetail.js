@@ -1,18 +1,20 @@
 import React from 'react'
 import { Card,CardContent } from "@mui/material"
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import ItemCount from "../ItemCount/ItemCount"
 import './ItemDetail.css'
 import { Link } from 'react-router-dom'
 import { Button } from '@mui/material'
+import CartContext from '../../Context/CartContext'
 
 const ItemDetail = ({product}) =>{
     // eslint-disable-next-line no-unused-vars
     const {id,name,image1,stock,price} = product;
     const [showOnAdd, setShowOnAdd] = useState(true);
-
+    const {addItem} = useContext(CartContext)
     const onAdd = (count) => {
         setShowOnAdd(false);
+        addItem(product,count)
         alert(name+ " x "+count +" un. agregado al carrito")  
     }
 

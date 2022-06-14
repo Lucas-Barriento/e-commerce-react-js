@@ -2,12 +2,15 @@ import './Item.css'
 import { Card,CardContent,Button } from "@mui/material";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import CartContext from '../../Context/CartContext';
 
 /* En Item se renderiza el card de cada producto, y la funcion onAdd */
 const Item = ({product}) =>{
     const{id,name,image1,price} = product;
-    
+    const { addItem } = useContext(CartContext)
     const onAdd = (count) => {
+        addItem(product,count)
         alert(name+ " x "+count +" un. agregado al carrito")  
     }
 

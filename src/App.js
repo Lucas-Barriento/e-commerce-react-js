@@ -7,6 +7,7 @@ import Contact from './pages/Contact'
 import AboutUs from './pages/AboutUs'
 import Home from './pages/Home';
 import Categories from './pages/Categories';
+import Cart from './components/Cart/Cart';
 import { CartProvider } from './Context/CartContext';
 //se importa CartProvider solo aca para wrappear toda la app
 function App() {
@@ -26,7 +27,7 @@ return(
       <Route path='*' element={<PageNotFound/>}/>
       <Route path='/about-us' element={<AboutUs/>}/>
       <Route path='/category/:categoryId' element={<Categories/>}/>
-      <Route path='./cart'/>
+      <Route path='/cart' element={<Cart/>} />
     </Routes>
   </BrowserRouter>
   </CartProvider>

@@ -1,0 +1,38 @@
+#deleteBtn svg{
+    color: black;
+}
+#cardCart{
+    border: solid 1px black ;
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+    height: 250px;
+    margin: 50px 50px;
+}
+#cardContentCart {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#imgContainer{
+    width: 230px;
+}
+#imgContainer img{
+    width: 100% ;   
+}
+
+#dataContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 400px;
+}
+
+#btnKeepBuying{
+    width: 100%;
+    color: black;
+}
+

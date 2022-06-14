@@ -14,7 +14,7 @@ const ItemDetailContainer = () =>{
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-        }, 3000);
+        }, 2000);
         //usamos find para encontrar el id seleccionado y setearlo a product
         setproduct(articulos.find(item => {
             return item.id === parseInt(id);

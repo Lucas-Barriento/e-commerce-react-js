@@ -8,10 +8,17 @@ const CartContext = createContext();
 const CartProvider = ({children}) =>{
     //elementos del carrito
     const [cartListItems, setCartListItems] = useState([])
+    const [totalPriceCart, setTotalPriceCart] = useState(0)
+    const [itemQuantity, setItemQuantity] = useState(0)
+
+    
 
     //agregar al carrito
     const addItem =(item,quantity)=>{
         let isInCart= cartListItems.find(obj =>  obj.id===item.id )
+        
+        setTotalPriceCart(totalPriceCart+item.price*quantity)
+        setItemQuantity(itemQuantity+quantity)
 
         if (!isInCart) {
             let itemCart = {...item,cartQuantity:quantity}
@@ -26,11 +33,18 @@ const CartProvider = ({children}) =>{
 
             setCartListItems(copyCartListItems);
         }
+        
 
     }
     
     const removeItem =(id)=>{
-        setCartListItems(cartListItems.filter(obj => obj.id!== id))
+        //se le asigna a aux el objeto del id recibido 
+        let aux= cartListItems.find(obj => obj.id===id )
+
+        setCartListItems(cartListItems.filter(obj => obj!== aux))
+        setItemQuantity(itemQuantity-aux.cartQuantity)
+        setTotalPriceCart(totalPriceCart-(aux.price*aux.cartQuantity))
+
     }
     const clear =()=>{
         setCartListItems([]);
@@ -41,7 +55,9 @@ const CartProvider = ({children}) =>{
         cartListItems,
         addItem,
         removeItem,
-        clear
+        clear,
+        totalPriceCart,
+        itemQuantity
     }
 
 return(
