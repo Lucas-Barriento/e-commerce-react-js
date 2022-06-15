@@ -30,3 +30,6 @@ li button,menuItem button a,a{
 #basic-menu ul{
     background-color: black;
 }
+a{
+    border-radius: 4px;
+}

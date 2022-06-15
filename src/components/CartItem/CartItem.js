@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import CartContext from '../../Context/CartContext'
 import {useContext} from "react"
 import DeleteIcon from '@mui/icons-material/Delete';
+import { Button } from '@mui/material';
 
 const CartItem = ({product}) =>{    
     const{id,name,image1,price,cartQuantity} = product;
@@ -32,7 +33,9 @@ const CartItem = ({product}) =>{
                 </CardContent>
                 <CardActions>
                     <div id='deleteBtn'>
-                    <DeleteIcon size="small" onClick={()=>removeItem(id)}>delete</DeleteIcon>
+                    <Button onClick={()=>removeItem(id)}>
+                        <DeleteIcon size="small" />
+                    </Button>
                     </div>
                 </CardActions>
             </Card>

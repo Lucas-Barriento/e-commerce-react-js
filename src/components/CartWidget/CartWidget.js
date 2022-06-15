@@ -46,7 +46,9 @@ const CartWidget = () =>{
                     :
                     <div>
                     <div id='clearBtn'>
-                        <ClearIcon onClick={()=>clear()} />
+                        <Button onClick={()=>clear()}>
+                            <ClearIcon/>
+                        </Button>
                     </div>
                 {cartListItems.map((item)=>{
                     return(

@@ -19,11 +19,16 @@ svg{
 #clearBtn{
     display: flex;
     justify-content: flex-end;
+    
 }
 
 #clearBtn svg{
     display: flex;
-    color: red !important;
+    color: white !important;
+    
+}
+#clearBtn button{
+    border: solid 1px white;
 }
 .emptyCart{
     visibility: hidden;

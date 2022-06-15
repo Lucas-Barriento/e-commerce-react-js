@@ -48,6 +48,9 @@ const CartProvider = ({children}) =>{
     }
     const clear =()=>{
         setCartListItems([]);
+        setItemQuantity(0);
+        setTotalPriceCart(0);
+
     }
 
     //aca definimos lo que queremos pasar a los componentes

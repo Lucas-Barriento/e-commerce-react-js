@@ -7,6 +7,9 @@
 #btnCount p{
     margin: 0 !important;
 }
+#btnCount button{
+    color: black;
+}
 #btnAddToCart svg{
     color: black;
 }

@@ -9,6 +9,7 @@
 #imgItemContainer img{
     width: 172px;
     height: 172px;
+    margin-bottom: 5px;
 }
 h3{
     text-align: center;

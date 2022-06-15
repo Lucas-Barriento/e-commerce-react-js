@@ -22,9 +22,9 @@ const Cart = () =>{
                                 <img src={image1} alt={id} ></img>
                             </div>
                             <div id='dataContainer'>
-                                <h2>{name}</h2>
-                                <p>Precio: ${Intl.NumberFormat().format(price)},00</p>
-                                <p> Cantidad: {cartQuantity}</p>
+                                <h2>{name.toUpperCase()}</h2>
+                                <p>PRECIO: ${Intl.NumberFormat().format(price)},00</p>
+                                <p>CANTIDAD: {cartQuantity}</p>
                             </div>
                             <div id='deleteBtn'>
                                 <ClearIcon size="small" onClick={()=>removeItem(id)}>delete</ClearIcon>
