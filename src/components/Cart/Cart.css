@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: row;
     width: 700px;
-    height: 250px;
+    height: 300px;
     margin: 50px 50px;
 }
 #cardContentCart {
@@ -31,8 +31,44 @@
     width: 400px;
 }
 
-#btnKeepBuying{
-    width: 100%;
+
+#btnKeepBuying,#btnFinishBuying{
+    width: 16%;
     color: black;
+    margin-top: 10px;
+    align-self: center;
+    text-align: center;
+}
+
+#btnSend,#btnAcept{
+    background-color: rgb(238, 120, 120) !important;
+    color: rgb(233, 233, 146) !important;
+    width: 25%;
+    margin: 10px;
+}
+#formCart{
+    background-color: white;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+} 
+
+#formCart >div {
+    width: 100%;
+    margin: 10px !important;
+}
+.MuiDialogContent-root{
+    background-color: white;
+    margin: 0%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+}
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation24.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthSm.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+    width: 50%;
 }
 

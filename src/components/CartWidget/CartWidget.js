@@ -7,6 +7,7 @@ import CartContext from '../../Context/CartContext'
 import { Menu } from '@mui/material';
 import CartItem from '../CartItem/CartItem';
 import ClearIcon from '@mui/icons-material/Clear';
+import { Link } from 'react-router-dom'
 
 const CartWidget = () =>{
     const {cartListItems,clear} = useContext(CartContext);
@@ -49,6 +50,9 @@ const CartWidget = () =>{
                         <Button onClick={()=>clear()}>
                             <ClearIcon/>
                         </Button>
+                    </div>
+                    <div id='btnCart'>
+                        <Link to={'/cart'}><Button variant="contained">Ver detalle</Button></Link>
                     </div>
                 {cartListItems.map((item)=>{
                     return(
