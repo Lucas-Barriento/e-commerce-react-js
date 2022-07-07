@@ -1,15 +1,21 @@
-#btnCount{
+#btnCount,#btnCountDarkMode{
     display: flex;
     justify-content: space-between;
     align-self: center;  
+    width: 100%;
 }
 
-#btnCount p{
+#btnCount p,#btnCountDarkMode p{
     margin: 0 !important;
 }
-#btnCount button{
+#btnCount button,#btnAddToCart svg{
     color: black;
 }
-#btnAddToCart svg{
-    color: black;
+
+#btnAddToCartDarkMode svg,#btnCountDarkMode button{
+    color: white;
+}
+#btnAddToCartDarkMode{
+    display: flex;
+    justify-content: center;
 }

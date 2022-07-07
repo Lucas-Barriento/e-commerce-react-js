@@ -1,6 +1,6 @@
-const Contact = ()=>{
+const Contact = ({title})=>{
     return(
-        <p>contacto</p>
+        <h1>{title}</h1>
     )
 }
 

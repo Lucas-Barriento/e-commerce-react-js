@@ -1,15 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import ItemList from '../ItemList/ItemList';
 import { Grid } from '@mui/material';
-import { useEffect,useState } from 'react';
+import { useContext, useEffect,useState } from 'react';
 import './ItemListContainer.css';
 import GetProducts from '../../functions/GetProducts';
 import Loader from "../../components/Loader/Loader";
+import { ThemeContext } from '../../Context/ThemeContext';
 
 
 /*En ItemListContainer esta la promesa donde se llama al back  */
 
-const ItemListContainer = () =>{
+const ItemListContainer = ({title}) =>{
+    const {darkMode} = useContext(ThemeContext)
     const [products,setProducts] = useState([])
     const [loading, setLoading] = useState(true);
 
@@ -18,7 +20,7 @@ const ItemListContainer = () =>{
         useEffect(() => {
             setTimeout(() => {
                 setLoading(false);
-            }, 2000);
+            }, 1000);
 
         // se llama a la promesa 
         GetProducts()
@@ -37,9 +39,12 @@ if (loading) {
     
 }else{
     return (
-        <Grid container spacing={2} style={{margin:"0"}} >
-            <ItemList products={products}/>
-        </Grid>
+        <div id={`home${darkMode ? 'DarkMode': ''}`}>
+            <h1>{title}</h1>
+            <Grid container spacing={2} style={{margin:"0"}} >
+                <ItemList products={products}/>
+            </Grid>
+        </div>
 )  
 }
 

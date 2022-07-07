@@ -8,8 +8,10 @@ import { Menu } from '@mui/material';
 import CartItem from '../CartItem/CartItem';
 import ClearIcon from '@mui/icons-material/Clear';
 import { Link } from 'react-router-dom'
+import { ThemeContext } from '../../Context/ThemeContext';
 
 const CartWidget = () =>{
+    const {darkMode} = useContext(ThemeContext)
     const {cartListItems,clear} = useContext(CartContext);
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
@@ -21,17 +23,17 @@ const CartWidget = () =>{
     };
 
     return(
-        <div className={`${cartListItems.length===0 && 'emptyCart'}`}>
+        <div className={`${cartListItems.length===0 ? 'emptyCart':''}`} >
             <Button
                 variant="contained"
                 className='btnCart'
-                id="basic-button"
+                id={`basic-button${darkMode?'DarkMode':''}`}
                 aria-controls={open ? 'basic-menu' : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
             >
-                <svg data-testid="ShoppingCartIcon"><ShoppingCartIcon/></svg>
+                <svg data-testid="ShoppingCartIcon" id={`ShoppingCartIcon${darkMode?'DarkMode':''}`}><ShoppingCartIcon/></svg>
             </Button>
             <Menu
                 id="basic-menu"
@@ -43,10 +45,11 @@ const CartWidget = () =>{
                 }}
             >
             {cartListItems.length=== 0 ?
+            /* corregir */
                     <p style={{color: "white"}}>carrito vacio</p>
                     :
-                    <div>
-                    <div id='clearBtn'>
+                    <div id='cartContainer'>
+                    <div id={`clearBtn${darkMode?'DarkMode':''}`}>
                         <Button onClick={()=>clear()}>
                             <ClearIcon/>
                         </Button>
@@ -60,8 +63,7 @@ const CartWidget = () =>{
                     )
                 })}
                 </div>
-                
-            }
+            }   
                 </Menu>            
         </div>
     )

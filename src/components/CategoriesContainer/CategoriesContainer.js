@@ -1,11 +1,14 @@
-import GetProducts from "../functions/GetProducts"
-import { useState,useEffect } from "react"
+import './CategoriesContainer.css'
+import GetProducts from "../../functions/GetProducts"
+import { useState,useEffect, useContext } from "react"
 import { useParams } from "react-router-dom";
 import { Grid } from "@mui/material";
-import ItemList from "../components/ItemList/ItemList";
-import Loader from '../components/Loader/Loader'
+import ItemList from "../../components/ItemList/ItemList";
+import Loader from '../../components/Loader/Loader'
+import { ThemeContext } from "../../Context/ThemeContext";
 
-const Categories = ()=>{
+const CategoriesContainer = ()=>{
+    const {darkMode} = useContext(ThemeContext)
     const {categoryId} = useParams();
     const [products,setProducts] = useState([])
     const [loading, setLoading] = useState(true)
@@ -38,11 +41,14 @@ const Categories = ()=>{
         )
     } else {
         return (
-            <Grid container spacing={2}>
-                <ItemList List products={products}/>
-            </Grid>
+            <div id={`category${darkMode?'DarkMode':''}`}>
+                <h1>{'Cascos '+categoryId}</h1>
+                <Grid container spacing={2}>
+                    <ItemList List products={products}/>
+                </Grid>
+            </div>
     )  
     }
 }
 
-export default Categories
+export default CategoriesContainer

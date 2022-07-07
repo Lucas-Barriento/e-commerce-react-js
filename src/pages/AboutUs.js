@@ -1,6 +1,6 @@
-const AboutUs = ()=>{
+const AboutUs = ({title})=>{
     return(
-        <p>About Us</p>
+        <h1>{title}</h1>
     )
 }
 

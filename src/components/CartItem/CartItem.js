@@ -8,18 +8,20 @@ import CartContext from '../../Context/CartContext'
 import {useContext} from "react"
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Button } from '@mui/material';
+import { ThemeContext } from '../../Context/ThemeContext';
 
-const CartItem = ({product}) =>{    
+const CartItem = ({product}) =>{
+    const {darkMode} = useContext(ThemeContext)   
     const{id,name,image1,price,cartQuantity} = product;
     const {removeItem} = useContext(CartContext)
 
         return (
-            <Card sx={{ minWidth: 100 }} id="cartCard" >
+            <Card sx={{ minWidth: 100 }} id={`cartCard${darkMode?'DarkMode':''}`} >
                 <CardContent id="cartCardContent" >
                     <div id="imgCartItemContainer" > 
                         <img src={image1} alt={id}></img>
                     </div>
-                    <div id='dataCartItem'>
+                    <div id={`dataCartItem${darkMode?'DarkMode':''}`}>
                     <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                         {name}
                     </Typography>
@@ -32,7 +34,7 @@ const CartItem = ({product}) =>{
                     </div>
                 </CardContent>
                 <CardActions>
-                    <div id='deleteBtn'>
+                    <div id={`deleteBtn${darkMode?'DarkMode':''}`}>
                     <Button onClick={()=>removeItem(id)}>
                         <DeleteIcon size="small" />
                     </Button>

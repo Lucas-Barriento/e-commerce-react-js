@@ -7,9 +7,11 @@ import { Link,useNavigate } from 'react-router-dom';
 import Modal from '../Modal/Modal'
 import dataBase from '../../utils/firebaseConfig';
 import { addDoc,collection } from 'firebase/firestore';
+import { ThemeContext } from '../../Context/ThemeContext';
 
 
-const Cart = () =>{
+const Cart = ({title}) =>{
+    const {darkMode} = useContext(ThemeContext)
     const {cartListItems,removeItem,totalPriceCart,itemQuantity,clear} = useContext(CartContext)
     const [showModal, setShowModal] = useState(false);
     const [formData, setFormData] = useState({ name:  '', phone: '', email: ''})
@@ -46,20 +48,22 @@ const Cart = () =>{
     }
 
     const finishOrder = () => {
+        localStorage.clear();
         clear();
         navigate('/')
     }
 
     return(
-            <div>
+            <div id={`cart${darkMode?'DarkMode':''}`} >
+                <h1>{title}</h1>
                 {cartListItems.length!== 0 ?
                 <div style={{display: "flex",flexDirection: "column"}}>
                 <p>{itemQuantity} PRODUCTO/S</p>
             {   cartListItems.map((item)=>{
                 const{id,name,image1,price,cartQuantity} = item;
                 return(
-                    <Card key={id} id="cardCart" >
-                        <CardContent id="cardContentCart">
+                    <Card key={id} id={`cardCart${darkMode?'DarkMode':''}`}>
+                        <CardContent id='cardContentCart' >
                             <div id="imgContainer">
                                 <img src={image1} alt={id} ></img>
                             </div>
@@ -68,7 +72,7 @@ const Cart = () =>{
                                 <p>PRECIO: ${Intl.NumberFormat().format(price)},00</p>
                                 <p>CANTIDAD: {cartQuantity}</p>
                             </div>
-                            <div id='deleteBtn'>
+                            <div id={`deleteBtn${darkMode?'DarkMode':''}`}>
                                 <ClearIcon size="small" onClick={()=>removeItem(id)}>delete</ClearIcon>
                             </div>
                         </CardContent>
@@ -90,7 +94,7 @@ const Cart = () =>{
 
                 : 
                 
-                <div style={{display: "flex",flexDirection: "column"}}>
+                <div style={{display: "flex",flexDirection: "column",height:'100vw'}}>
                     <p>NO HAY PRODUCTOS EN EL CARRITO</p>
                     <div id="btnKeepBuying">
                         <Link to='/' >

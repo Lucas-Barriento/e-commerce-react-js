@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import Loader from '../Loader/Loader'
 import dataBase from "../../utils/firebaseConfig";
 import { getDoc ,doc } from "firebase/firestore";
+import { Grid } from "@mui/material";
 
 const ItemDetailContainer = () =>{
     const [product, setProduct] = useState({});
@@ -16,7 +17,7 @@ const ItemDetailContainer = () =>{
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-        }, 2000);
+        }, 1000);
 
 /*         GetProducts()
         .then((response) => { 
@@ -54,7 +55,9 @@ const ItemDetailContainer = () =>{
         )
     }else{
         return(
-            <ItemDetail product={product}/>
+            <Grid style={{height:'100vw'}}>
+                <ItemDetail product={product}/>
+            </Grid>
             )
         }
 }

@@ -1,35 +1,94 @@
-#navbar{
+#navbarDarkMode{
     display: flex;
     color: whitesmoke;
     background-color: black !important;
-    height: 80px;
     justify-content: center;
 }
+#navbarDarkMode span.MuiSwitch-thumb.css-jsexje-MuiSwitch-thumb,#navbarDarkMode .css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track{
+    background-color: white;
+}
+span.MuiSwitch-thumb.css-jsexje-MuiSwitch-thumb {
+    background-color: black;
+}
+.css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked {
+    color: white;
+}
+
+#navbar{
+    background-color: white;
+    color: black;
+}
+
 .logo{
+    display: flex;
     width: 30px;
 }
+
 .logo img{
     width: 100%;
+    
 }
-ul{
-    display: flex;
-    width: 700px;
-    justify-content: space-around;
-    list-style:none;
-    margin: 0 !important;
+.logoImg{
+    background: white;
+}
+.logoImgDarkMode {
+    background: black;
+}
+.css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked {
+    color: white;
 }
 li{
-    width: 150px;
+    width: 102px;
+    align-self: center;
+    margin: 6px;
 }
-li button,menuItem button a,a{
+#menuItem{
+    width: 133px;
+    border-radius: 20px !important;
+}
+li button,menuItem button a,a,.btnDetail{
     width: 100%;
     background-color: rgb(238, 120, 120) !important;
     color: rgb(233, 233, 146) !important;
+    border-radius: 20px !important;
 }
 
-#basic-menu ul{
-    background-color: black;
+
+.MuiBox-root.css-1t6c9ts {
+    list-style: none;
+    justify-content: flex-end;
 }
-a{
-    border-radius: 4px;
+
+.menu-appbar{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    list-style:none;
+    margin: 0 !important;
+    flex-direction: column;
+} 
+
+
+.MuiBox-root.css-1lvtzne {
+    justify-content: flex-end;
+}
+.css-19r6kue-MuiContainer-root {
+    width: 100%;
+}
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiMenu-paper.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+    background-color: transparent;
+} 
+
+.cart{
+    margin: 6px;
+}
+
+li #basic-button{
+    border: 0px !important;
+}
+#boxMenu button svg {
+    color: black !important
+}
+#boxMenuDarkMode button svg {
+    color: white;
 }

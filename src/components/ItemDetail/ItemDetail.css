@@ -27,8 +27,18 @@ margin: 0;
     flex-direction: row;
     flex-wrap: nowrap;
 }
-a button{
+a button,a{
     background-color: rgb(238, 120, 120) !important;
     color: rgb(233, 233, 146) !important;
     width: 100%;
+    text-align: center;
+}
+#cardItemDarkMode{
+    --tw-bg-opacity: 1;
+    background-color: rgb(30 41 59/var(--tw-bg-opacity));
+    height: 100%;
+}
+
+#cardItem{
+    height: 100%;
 }

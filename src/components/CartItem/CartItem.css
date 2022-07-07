@@ -1,23 +1,36 @@
 #imgCartItemContainer{
-    width: 90px;
-    height: 90px;
+    width: 68px;
+    margin: 0;
 }
 #imgCartItemContainer img{
-    width: 100%
+    width: 100%;
+    height: 100%;
 }
-#cartCard{
+#cartCard,#cartCardDarkMode{
     display: flex;
+    height: 100px;
+}
+#cartCardDarkMode{
+    --tw-bg-opacity: 1;
+    background-color: rgb(30 41 59/var(--tw-bg-opacity));
+    color: white;
+    box-shadow: 0px 2px 1px -1px #f9fafb69, inset 0px 1px 1px 0px #f9fafb69, 0px 1px 3px 0px #f9fafb69;
+
 }
 #cartCardContent{
     display: flex;
 }
 
-#dataCartItem{
+#dataCartItem,#dataCartItemDarkMode{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 420px;
+    width: 420px !important;
 }
-#deleteBtn svg{
+
+#dataCartItemDarkMode p,#deleteBtnDarkMode svg{
+    color: white;
+}
+#dataCartItem p,#deleteBtn svg{
     color: black;
 }

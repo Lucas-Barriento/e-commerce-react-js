@@ -10,26 +10,53 @@ svg{
     background-color: transparent !important;
     color: white;
 }
+#ShoppingCartIcon svg{
+    color: black;
+}
 
-#basic-menu ul{
+.btnCart ul{
     display: flex;
     flex-direction: column;
     width: auto;
+    background-color: black;    
 }
+
 #clearBtn{
     display: flex;
     justify-content: flex-end;
-    
+    background-color: white;
+}
+#clearBtnDarkMode{
+    display: flex;
+    justify-content: flex-end;
+    --tw-bg-opacity: 1;
+    background-color: rgb(30 41 59/var(--tw-bg-opacity));
+    color: white;
 }
 
-#clearBtn svg{
+#clearBtnDarkMode svg{
     display: flex;
     color: white !important;
-    
+}
+#clearBtn svg{
+    display: flex;
+    color: black !important;
 }
 #clearBtn button{
+    border: solid 1px black;
+}
+#clearBtnDarkMode button{
     border: solid 1px white;
 }
 .emptyCart{
     visibility: hidden;
 }
+#basic-buttonDarkMode{
+    border: 1px solid white !important;
+}
+#basic-button{
+    border: 1px solid black !important;   
+}
+/*  #CartBtnDarkMode{
+    background-color: black;
+ } */
