@@ -1,0 +1,56 @@
+form {
+    display: flex;
+    border: 1px solid black;
+    justify-content: center;
+    flex-flow: column nowrap;
+    padding: 20px;
+    margin: 50px;
+    background-color: transparent;
+    align-self: center;
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px -1pxrgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
+input{
+    margin-bottom: 1rem!important;
+}
+
+textarea{
+    resize: none;
+    margin-bottom: 1rem!important;
+}
+
+button.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButtonBase-root.btnContacto.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+    width: 100%;
+    background-color: rgb(238, 120, 120) !important;
+    color: rgb(233, 233, 146) !important;
+    border-radius: 20px !important;
+}
+
+.MuiContainer-root.MuiContainer-maxWidthLg.css-1oqqzyl-MuiContainer-root {
+    height: 100vh;
+}
+
+#contactDataDarkMode {
+    --tw-bg-opacity: 1;
+    background-color: rgb(15 23 42/var(--tw-bg-opacity));
+    color: white;
+}
+
+.formDarkMode{
+    --tw-bg-opacity: 1;
+    background-color: rgb(30 41 59/var(--tw-bg-opacity));
+    color: white;
+    box-shadow: 0px 2px 1px -1px #f9fafb69, inset 0px 1px 1px 0px #f9fafb69, 0px 1px 3px 0px #f9fafb69;
+
+}
+#containerDarkMode{
+    --tw-bg-opacity: 1;
+    background-color: rgb(15 23 42/var(--tw-bg-opacity));
+    color: white;
+}
+/* #container{
+    --tw-bg-opacity: 1;
+    background-color: rgb(15 23 42/var(--tw-bg-opacity));
+    color: white;
+} */

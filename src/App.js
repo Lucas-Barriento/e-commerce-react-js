@@ -11,6 +11,7 @@ import Cart from './components/Cart/Cart';
 import { CartProvider } from './Context/CartContext';
 import ThemeProvider from './Context/ThemeContext';
 import CategoriesContainer from './components/CategoriesContainer/CategoriesContainer';
+import Footer from './components/Footer/Footer';
 
 function App(){
 
@@ -29,6 +30,7 @@ return(
           <Route path='/category/:categoryId' element={<CategoriesContainer/>}/>
           <Route path='/cart' element={<Cart title={'Tu carrito'}/>} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </CartProvider>
   </ThemeProvider>

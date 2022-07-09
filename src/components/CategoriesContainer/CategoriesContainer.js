@@ -42,7 +42,7 @@ const CategoriesContainer = ()=>{
     } else {
         return (
             <div id={`category${darkMode?'DarkMode':''}`}>
-                <h1>{'Cascos '+categoryId}</h1>
+                <h1 style={{textAlign:'center'}}>{'Cascos '+categoryId}</h1>
                 <Grid container spacing={2}>
                     <ItemList List products={products}/>
                 </Grid>

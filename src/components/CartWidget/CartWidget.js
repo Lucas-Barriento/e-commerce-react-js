@@ -46,7 +46,7 @@ const CartWidget = () =>{
             >
             {cartListItems.length=== 0 ?
             /* corregir */
-                    <p style={{color: "white"}}>carrito vacio</p>
+                    <div></div>
                     :
                     <div id='cartContainer'>
                     <div id={`clearBtn${darkMode?'DarkMode':''}`}>

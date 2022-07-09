@@ -1,0 +1,27 @@
+#iconsFooter img{
+    width: 40px;
+}
+
+.ms-3 a{
+    background-color: transparent !important;
+}
+#footer,#footerDarkMode{
+    margin: 0;
+    bottom:0px;
+    width:100%;
+}
+
+#footerDarkMode{
+    background-color: black;
+}
+#footer{
+    background-color: white;
+}
+.my-4 {
+        margin-top: 0!important;
+        margin-bottom: 0!important; 
+}
+
+.ms-3 {
+    margin-left: -3rem!important;
+}

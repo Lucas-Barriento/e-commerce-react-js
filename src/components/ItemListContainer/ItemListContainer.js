@@ -40,8 +40,8 @@ if (loading) {
 }else{
     return (
         <div id={`home${darkMode ? 'DarkMode': ''}`}>
-            <h1>{title}</h1>
-            <Grid container spacing={2} style={{margin:"0"}} >
+            <h1 style={{textAlign:'center'}} >{title}</h1>
+            <Grid container spacing={2} style={{margin:"0"}} id='grid' >
                 <ItemList products={products}/>
             </Grid>
         </div>

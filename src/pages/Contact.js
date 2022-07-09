@@ -1,6 +1,7 @@
+import ContactContainer from "../components/ContactContainer/ContactContainer"
 const Contact = ({title})=>{
     return(
-        <h1>{title}</h1>
+        <ContactContainer title={'Contacto'}/>
     )
 }
 
